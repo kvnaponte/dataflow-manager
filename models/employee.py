@@ -1,16 +1,13 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, EmailStr, Field
 
-# Base del empleado (datos comunes)
 class EmployeeBase(BaseModel):
-    name: str
-    position: str
-    department: str
-    email: str
+    name: str = Field(..., min_length=2, description="Nombre completo")
+    position: str = Field(..., min_length=2, description="Cargo")
+    department: str = Field(..., min_length=2, description="Departamento")
+    email: EmailStr = Field(..., description="Correo")
 
-# Modelo usado para crear un empleado
 class EmployeeCreate(EmployeeBase):
     pass
 
-# Modelo de empleado completo con id
-class Employee(EmployeeBase):
+class EmployeeResponse(EmployeeBase):
     id: int
