@@ -11,3 +11,9 @@ class EmployeeCreate(EmployeeBase):
 
 class EmployeeResponse(EmployeeBase):
     id: int
+
+# Para evitar errores raros de import
+class Employee(EmployeeResponse):
+    pass
+
+__all__ = ["Employee", "EmployeeCreate", "EmployeeResponse"]
