@@ -24,7 +24,7 @@ def save_data(data):
     with open(DATA_FILE, "w") as file:
         json.dump(data, file, indent=4)
 
-@router.post("/", response_model=EmployeeResponse, summary="Create Employee")
+@router.post("/", response_model=EmployeeResponse, summary="Crear empleado")
 def create_employee(employee: EmployeeCreate):
     employees = read_data()
     new_id = len(employees) + 1
@@ -46,7 +46,7 @@ def create_employee(employee: EmployeeCreate):
 def get_employees():
     return read_data()
 
-@router.put("/{employee_id}", summary="Update Employee")
+@router.put("/{employee_id}", summary="Actualizar información")
 def update_employee(
     employee_id: int,
     name: str = Form(None),
@@ -64,11 +64,11 @@ def update_employee(
             if email: emp["email"] = email
             
             save_data(employees)
-            return {"message": "Empleado actualizado ✅", "data": emp}
+            return {"message": "Empleado actualizado", "data": emp}
 
-    return {"error": "Empleado no encontrado ❌"}
+    return {"error": "Empleado no encontrado"}
 
-@router.delete("/{employee_id}", summary="Delete Employee")
+@router.delete("/{employee_id}", summary="Eliminar empleado")
 def delete_employee(employee_id: int):
     employees = read_data()
 
@@ -76,6 +76,6 @@ def delete_employee(employee_id: int):
         if emp["id"] == employee_id:
             employees.remove(emp)
             save_data(employees)
-            return {"message": "Empleado eliminado 🗑️"}
+            return {"message": "Empleado eliminado"}
 
-    return {"error": "Empleado no encontrado ❌"}
+    return {"error": "Empleado no encontrado"}
