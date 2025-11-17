@@ -1,1 +1,37 @@
-[]
+[
+    {
+        "id": 1,
+        "name": "string",
+        "position": "string",
+        "department": "string",
+        "email": "user@example.com"
+    },
+    {
+        "id": 2,
+        "name": "string",
+        "position": "string",
+        "department": "string",
+        "email": "user@example.com"
+    },
+    {
+        "id": 3,
+        "name": "string",
+        "position": "string",
+        "department": "string",
+        "email": "user@example.com"
+    },
+    {
+        "id": 4,
+        "name": "string",
+        "position": "string",
+        "department": "string",
+        "email": "user@example.com"
+    },
+    {
+        "id": 5,
+        "name": "string",
+        "position": "string",
+        "department": "string",
+        "email": "user@example.com"
+    }
+]
