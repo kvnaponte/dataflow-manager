@@ -12,4 +12,4 @@ app.include_router(data_routes.router)
 
 @app.get("/", tags=["Root"])
 def home():
-    return {"message": "Bienvenido a DataFlow Manager 🚀"}
+    return {"message": "Bienvenido a DataFlow Manager"}
